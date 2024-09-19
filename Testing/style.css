@@ -7,6 +7,9 @@
   --col4:rgb(255, 255, 0);
   --col5:rgb(0, 255, 255);
   --col6:rgb(255, 0, 255);
+
+
+  --cover-size: 60em;
 }
 
 *{
@@ -16,6 +19,7 @@
   padding: 0;
 }
 
+/* switchPage
 body{
   background-color: var(--secondary);
   width: 100%;
@@ -73,4 +77,90 @@ button:hover{
 
 .scale-up{
   transform: scale(1.2);
+}
+*/
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul{
+  width: 60vw;
+  padding:0 100em 0 25em;
+}
+
+.cards {
+	list-style: none;
+	white-space: nowrap;
+	max-width: calc(var(--cover-size) * 6);
+	overflow-x: scroll;
+  overflow-y:hidden;
+
+  scroll-snap-type: x mandatory;
+}
+
+.cards li {
+	display: inline-block;
+	width: var(--cover-size);
+	aspect-ratio: 1;
+
+  width: 600px;
+  height: 600px;
+
+  background-color: gray;
+  
+
+  scroll-snap-align: center;
+  
+  /* Track this element as it intersects the scrollport */
+	view-timeline-name: --li-in-and-out-of-view;
+	view-timeline-axis: inline;
+
+  	/* Link an animation to the established view-timeline and have it run during the contain phase */
+	animation: linear adjust-z-index both;
+	animation-timeline: --li-in-and-out-of-view;
+
+	/* Make the 3D stuff work… */
+	perspective: 40em;
+}
+
+@keyframes adjust-z-index {
+	0% {
+		z-index: 1;
+	}
+	50% {
+		z-index: 100; /* When at the center, be on top */
+	}
+	100% {
+		z-index: 1;
+	}
+}
+
+.cards li .imagediv{
+
+  	/* Link an animation to the established view-timeline (of the parent li) and have it run during the contain phase */
+	animation: linear rotate-cover both;
+	animation-timeline: --li-in-and-out-of-view;
+}
+
+@keyframes rotate-cover {
+	0% {
+		transform: translateX(-100%) rotateY(-45deg);
+	}
+	35% {
+		transform: translateX(0) rotateY(-45deg);
+	}
+	50% {
+		transform: rotateY(0deg) translateZ(1em) scale(1.5);
+	}
+	65% {
+		transform: translateX(0) rotateY(45deg);
+	}
+	100% {
+		transform: translateX(100%) rotateY(45deg);
+	}
 }
