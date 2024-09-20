@@ -1,0 +1,95 @@
+*{
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul{
+  width: 80vw;
+  padding: 0 30vw; 
+}
+
+.cards {
+	list-style: none;
+	white-space: nowrap;
+	max-width: calc(60em * 6);
+	overflow-x: scroll;
+  overflow-y:hidden;
+
+  scroll-snap-type: x mandatory;
+}
+
+li {
+  display: inline-block;
+
+  width: 30em;
+  height: 20em;
+  aspect-ratio: 1;
+
+  scroll-snap-align: center;
+
+  view-timeline-name: --li-in-and-out-of-view;
+	view-timeline-axis: inline;
+
+  animation: linear adjust-z-index both;
+	animation-timeline: --li-in-and-out-of-view;
+
+  perspective: 40em;
+
+  position: relative; /* Needed for absolute positioning of the child */
+}
+
+@keyframes adjust-z-index {
+	0% {
+		z-index: 1;
+	}
+	50% {
+		z-index: 100; /* When at the center, be on top */
+	}
+	100% {
+		z-index: 1;
+	}
+}
+
+li div{
+  background-color: gray;
+  height: 50%;
+  width: 50%;
+
+  animation: linear rotate-cover both;
+	animation-timeline: --li-in-and-out-of-view;
+
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Move down by 50% of li’s height */
+  left: 50%; /* Move right by 50% of li’s width */
+  transform: translate(-50%, -50%); /* Adjust for the div’s size */
+}
+
+
+@keyframes rotate-cover {
+	0% {
+		transform: translateX(-100%) rotateY(-45deg);
+	}
+	35% {
+		transform: translateX(0) rotateY(-45deg);
+	}
+	50% {
+		transform: rotateY(0deg) translateZ(1em) scale(1.5);
+	}
+	65% {
+		transform: translateX(0) rotateY(45deg);
+	}
+	100% {
+		transform: translateX(100%) rotateY(45deg);
+	}
+}
