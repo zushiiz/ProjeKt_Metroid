@@ -107,11 +107,6 @@ ul{
 	display: inline-block;
 	width: var(--cover-size);
 	aspect-ratio: 1;
-
-  width: 600px;
-  height: 600px;
-
-  background-color: gray;
   
 
   scroll-snap-align: center;
@@ -140,11 +135,14 @@ ul{
 	}
 }
 
-.cards li .imagediv{
+.cards li div{
 
   	/* Link an animation to the established view-timeline (of the parent li) and have it run during the contain phase */
 	animation: linear rotate-cover both;
 	animation-timeline: --li-in-and-out-of-view;
+  background-color: gray;
+  width: 600px;
+  height: 600px;
 }
 
 @keyframes rotate-cover {
