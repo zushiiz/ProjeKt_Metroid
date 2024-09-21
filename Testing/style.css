@@ -140,6 +140,8 @@ ul{
   	/* Link an animation to the established view-timeline (of the parent li) and have it run during the contain phase */
 	animation: linear rotate-cover both;
 	animation-timeline: --li-in-and-out-of-view;
+
+  
   background-color: gray;
   width: 600px;
   height: 600px;
