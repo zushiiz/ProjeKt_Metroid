@@ -28,15 +28,15 @@ main{
 	white-space: nowrap;
 	padding: 0 10em;
 
-	scroll-snap-type: x mandatory;
 	display: flex;
 	align-items: center;
+
+	scroll-snap-type: x mandatory;
 }
 
 li{
 	display: inline-block;
 	aspect-ratio: 1;
-  scroll-snap-align: center;
 
 	animation: linear adjust-z-index both;
 	animation-timeline: --li-in-and-out-of-view;
@@ -44,7 +44,9 @@ li{
 	view-timeline-name: --li-in-and-out-of-view;
 	view-timeline-axis: inline;
 
+	scroll-snap-align: center;
 }
+
 
 div{
 	width: 10em;
@@ -53,6 +55,14 @@ div{
 
 	animation: linear scale-cover both;
 	animation-timeline: --li-in-and-out-of-view;
+
+	user-select: none;
+  -webkit-user-drag: none; 
+}
+
+.active{
+	cursor: grabbing;
+	cursor: -webkit-grabbing;
 }
 
 @keyframes adjust-z-index {
