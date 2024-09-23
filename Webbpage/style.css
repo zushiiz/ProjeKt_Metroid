@@ -74,25 +74,10 @@ button:hover{
 
 @media only screen and (min-width: 600px) {
 
-  .cards{
-    display: block;
-  }
-
   aside{
     display: none;
   }
 
-  #tlmn-section{
-    display: block;
-  }
-
-  #adtl-section{
-    display: block;
-  }
-  
-  #prdt-section{
-    display: block;
-  }
 }
 
 @media only screen and (min-width: 769px) {

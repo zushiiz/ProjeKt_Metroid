@@ -1,14 +1,15 @@
 :root{
 	--slider-width:50em;
 	--cards-width:20em;
+  --card-color:gray;
 }
 
 .cards{
   display: flex;
   align-items: center;
+  height: 100%;
   width:var(--slider-width);
   padding: 0 calc((var(--slider-width) - var(--cards-width)) / 2);
-  height: 60em;
   list-style: none;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -31,7 +32,7 @@
 }
 
 .cards div{
-  background-color: gray;
+  background-color: var(--card-color);
   width: var(--cards-width);
   height: 120%;
 
@@ -50,6 +51,7 @@
 
 #cards-section{
   display: none;
+  height: 100vh;
 }
 
 @keyframes adjust-z-index {
