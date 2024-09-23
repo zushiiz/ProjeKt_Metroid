@@ -22,12 +22,7 @@ body{
   min-height: 100vh;
 }
 
-header{
-  grid-area: hd;
-}
-
 aside{
-  grid-area:as;
   bottom: 0;
   position: fixed;
   background-color: var(--primary);
@@ -44,7 +39,6 @@ button{
 
 button:hover{
   background-color: var(--secondary);
-
 }
 
 #prkt-section{
@@ -76,4 +70,30 @@ button:hover{
 
 .button-section{
   min-height: 100vh;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .cards{
+    display: block;
+  }
+
+  aside{
+    display: none;
+  }
+
+  #tlmn-section{
+    display: block;
+  }
+
+  #adtl-section{
+    display: block;
+  }
+  
+  #prdt-section{
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 769px) {
 }

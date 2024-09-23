@@ -34,7 +34,7 @@ main{
 	scroll-snap-type: x mandatory;
 }
 
-li{
+.cards li{
 	display: inline-block;
 	aspect-ratio: 1;
 
@@ -48,7 +48,7 @@ li{
 }
 
 
-div{
+.cards div{
 	width: 10em;
 	height: 20em;
 	background-color: gray;

@@ -18,3 +18,4 @@ function toggleSection(sectionId, buttonId){
     }
   })
 }
+
