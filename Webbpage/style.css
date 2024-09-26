@@ -35,20 +35,30 @@ aside{
 #prkt-section{
   background-color: var(--col1);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-#prkt-section * {
-  margin: 1em 0;
+@keyframes swipe-left{
+  from{
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(20%);
+  }
+  to{
+    transform: translateY(0%);
+  }
 }
 
 h1{
   text-align: center;
   margin: 0;
   margin-bottom: 1em;
+
+  top: 0;
+  left: 0;
+  animation: swipe-left 1s infinite;
 }
+
 
 
 .more-button{
@@ -98,6 +108,14 @@ img{
   overflow: hidden;
   padding: 2em;
   padding-bottom: 4em;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-section *{
+  margin: 1em 0;
 }
 
 @media only screen and (min-width: 600px) {
