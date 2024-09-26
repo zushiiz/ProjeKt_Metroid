@@ -5,7 +5,7 @@ function toggleSection(sectionId, buttonId){
 
   allSections.forEach((section) => {
     if (section.id === sectionId){
-      section.style.display = "block";
+      section.style.display = "flex";
     } else {
       section.style.display = "none";
     }
@@ -27,10 +27,10 @@ function desktopSection(e) {
   const firstSection = document.getElementById("prkt-section");
   allSections.forEach((section) => {
     if (e.matches) {
-      section.style.display = "block";
+      section.style.display = "flex";
     } else {
       section.style.display = "none";
-      firstSection.style.display = "block";
+      firstSection.style.display = "flex";
     }    
   });
 }

@@ -29,21 +29,42 @@ aside{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;  
-}
-
-button{
-  border: none;
-  background: none;
-}
-
-button:hover{
-  background-color: var(--secondary);
+  justify-content: space-evenly;
 }
 
 #prkt-section{
   background-color: var(--col1);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#prkt-section * {
+  margin: 1em 0;
+}
+
+h1{
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+
+.more-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black;
+  background-color: var(--primary);
+  color: var(--secondary);
+  width: 7em;
+  height: 3em;
+  border-radius: 15px;
+}
+
+img{
+  width: 100%;
 }
 
 #tmln-section{
@@ -63,13 +84,20 @@ button:hover{
 
 .sec-button{
   transition: transform 0.5s;
+  background-color: var(--secondary);
+  border: none;
+  background: none;
 }
+
 .scale-up{
   transform: scale(3);
 }
 
 .button-section{
   min-height: 100vh;
+  overflow: hidden;
+  padding: 2em;
+  padding-bottom: 4em;
 }
 
 @media only screen and (min-width: 600px) {
