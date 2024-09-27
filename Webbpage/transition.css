@@ -1,0 +1,81 @@
+:root{
+  --left:3s;
+  --top:2s;
+  --img:4s;
+}
+
+/*out*/
+@keyframes swipe-left-out{
+  from{
+    transform: translateX(0%);
+  }
+  to{
+    transform: translateX(-500%);
+  }
+}
+.transition-left-out{
+  animation: swipe-left-out var(--left);
+}
+
+@keyframes swipe-left-out-img{
+  from{
+    transform: translateX(0%);
+  }
+  to{
+    transform: translateX(-500%);
+  }
+}
+.transition-left-out-img{
+  animation: swipe-left-out var(--img);
+}
+
+@keyframes swipe-top-out{
+  from{
+    transform: translateY(0%);
+  }
+  to{
+    transform: translateY(-500%);
+  }
+}
+.transition-top-out{
+  animation: swipe-top-out var(--top);
+}
+
+/*in*/
+
+@keyframes swipe-left-in{
+  from{
+    transform: translateX(-500%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+.transition-left-in{
+  animation: swipe-left-in var(--left);
+}
+
+@keyframes swipe-left-in-img{
+  from{
+    transform: translateX(-500%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+.transition-left-in-img{
+  animation: swipe-left-in-img var(--img);
+}
+
+
+@keyframes swipe-top-in{
+  from{
+    transform: translateY(-500%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+}
+.transition-top-in{
+  animation: swipe-top-in var(--top);
+}

@@ -3,19 +3,57 @@ function toggleSection(sectionId, buttonId){
   const allSections = document.querySelectorAll(".button-section");
   const allButtons = document.querySelectorAll(".sec-button");
 
-  allSections.forEach((section) => {
-    if (section.id === sectionId){
-      section.style.display = "flex";
-    } else {
-      section.style.display = "none";
-    }
-  });
-
   allButtons.forEach((button) => {
+
+    console.log(button.id, buttonId)
+
     if (button.id === buttonId){
       button.classList.add("scale-up");
     } else {
       button.classList.remove("scale-up");
+    }
+  });
+
+  
+
+  allSections.forEach((section) => {
+
+    const h = section.querySelector("h1");
+    const p = section.querySelector("p");
+    const i = section.querySelector("img");
+
+    if (section.id === sectionId){
+
+      setTimeout(() => {
+        console.log("time-in")
+        section.style.display = "flex";
+        h.classList.add("transition-top-in");
+        p.classList.add("transition-left-in");
+        i.classList.add("transition-left-in-img");
+      }, 2000);
+
+
+    } else {
+
+      console.log("click")
+
+      h.classList.remove("transition-top-in");
+      p.classList.remove("transition-left-in");
+      i.classList.remove("transition-left-in-img");
+
+      h.classList.add("transition-top-out");
+      p.classList.add("transition-left-out");
+      i.classList.add("transition-left-out-img");
+      
+
+      setTimeout(() => {
+        console.log("time")
+        h.classList.remove("transition-top-out");
+        p.classList.remove("transition-left-out");
+        i.classList.remove("transition-left-out-img");
+        section.style.display = "none";
+      }, 2000);
+
     }
   });
 }
