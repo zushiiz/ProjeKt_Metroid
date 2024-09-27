@@ -4,9 +4,6 @@ function toggleSection(sectionId, buttonId){
   const allButtons = document.querySelectorAll(".sec-button");
 
   allButtons.forEach((button) => {
-
-    console.log(button.id, buttonId)
-
     if (button.id === buttonId){
       button.classList.add("scale-up");
     } else {
@@ -14,43 +11,49 @@ function toggleSection(sectionId, buttonId){
     }
   });
 
-  
-
   allSections.forEach((section) => {
 
     const h = section.querySelector("h1");
-    const p = section.querySelector("p");
-    const i = section.querySelector("img");
+    const all_p = section.querySelectorAll("p");
+    const all_i = section.querySelectorAll("img");
 
     if (section.id === sectionId){
-
       setTimeout(() => {
-        console.log("time-in")
         section.style.display = "flex";
+        all_p.forEach((e) => {
+          e.classList.add("transition-left-in");
+        });
+        all_i.forEach((e) => {
+          e.classList.add("transition-left-in-img");
+        });
         h.classList.add("transition-top-in");
-        p.classList.add("transition-left-in");
-        i.classList.add("transition-left-in-img");
       }, 2000);
 
-
     } else {
-
-      console.log("click")
-
       h.classList.remove("transition-top-in");
-      p.classList.remove("transition-left-in");
-      i.classList.remove("transition-left-in-img");
+      all_p.forEach((e) => {
+        e.classList.remove("transition-left-in");
+      });
+      all_i.forEach((e) => {
+        e.classList.remove("transition-left-in-img");
+      });
 
       h.classList.add("transition-top-out");
-      p.classList.add("transition-left-out");
-      i.classList.add("transition-left-out-img");
+      all_p.forEach((e) => {
+        e.classList.add("transition-left-out");
+      });
+      all_i.forEach((e) => {
+        e.classList.add("transition-left-out-img");
+      });
       
-
       setTimeout(() => {
-        console.log("time")
         h.classList.remove("transition-top-out");
-        p.classList.remove("transition-left-out");
-        i.classList.remove("transition-left-out-img");
+        all_p.forEach((e) => {
+          e.classList.remove("transition-left-out");
+        });
+        all_i.forEach((e) => {
+          e.classList.remove("transition-left-out-img");
+        });
         section.style.display = "none";
       }, 2000);
 

@@ -45,7 +45,7 @@
 
 @keyframes swipe-left-in{
   from{
-    transform: translateX(-500%);
+    transform: translateX(500%);
   }
   to{
     transform: translateX(0%);
@@ -57,7 +57,7 @@
 
 @keyframes swipe-left-in-img{
   from{
-    transform: translateX(-500%);
+    transform: translateX(500%);
   }
   to{
     transform: translateX(0%);
