@@ -27,7 +27,7 @@ function toggleSection(sectionId, buttonId){
           e.classList.add("transition-left-in-img");
         });
         h.classList.add("transition-top-in");
-      }, 2000);
+      }, 900);
 
     } else {
       h.classList.remove("transition-top-in");
@@ -55,7 +55,7 @@ function toggleSection(sectionId, buttonId){
           e.classList.remove("transition-left-out-img");
         });
         section.style.display = "none";
-      }, 2000);
+      }, 900);
 
     }
   });

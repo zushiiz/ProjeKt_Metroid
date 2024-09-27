@@ -1,6 +1,8 @@
 :root{
   --primary:rgb(255, 255, 255);
   --secondary:rgb(0, 0, 0);
+  --article-bg:var(--col1);
+
   --col1:rgb(255, 0, 0);
   --col2:rgb(0, 255, 0);
   --col3:rgb(0, 0, 255);
@@ -33,7 +35,7 @@ aside{
 }
 
 #prkt-section{
-  background-color: var(--col1);
+  background-color: var(--article-bg);
   display: flex;
 }
 
@@ -60,17 +62,17 @@ img{
 }
 
 #tmln-section{
-  background-color: var(--col2);  
+  background-color: var(--article-bg);  
   display: none;
 }
 
 #adtl-section{
-  background-color: var(--col3);  
+  background-color: var(--article-bg);  
   display: none;
 }
 
 #prdt-section{
-  background-color: var(--col4);  
+  background-color: var(--article-bg);  
   display: none;
 }
 
@@ -79,6 +81,10 @@ img{
   background-color: var(--secondary);
   border: none;
   background: none;
+}
+
+.sec-button:hover{
+  background-color: var(--primary);
 }
 
 .scale-up{
