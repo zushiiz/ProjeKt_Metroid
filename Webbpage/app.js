@@ -13,45 +13,47 @@ function toggleSection(sectionId, buttonId){
 
   allSections.forEach((section) => {
 
-    const h = section.querySelector("h1");
-    const all_p = section.querySelectorAll("p");
-    const all_i = section.querySelectorAll("img");
+    const up = section.querySelector("h1");
+    const leftEarly = section.querySelectorAll("p");
+    const leftLate = section.querySelectorAll(".left-late");
 
     if (section.id === sectionId){
       setTimeout(() => {
         section.style.display = "flex";
-        all_p.forEach((e) => {
+        leftEarly.forEach((e) => {
           e.classList.add("transition-left-in");
         });
-        all_i.forEach((e) => {
+        leftLate.forEach((e) => {
           e.classList.add("transition-left-in-img");
         });
-        h.classList.add("transition-top-in");
+        up.classList.add("transition-top-in");
       }, 900);
 
     } else {
-      h.classList.remove("transition-top-in");
-      all_p.forEach((e) => {
+      
+      up.classList.remove("transition-top-in");
+      leftEarly.forEach((e) => {
         e.classList.remove("transition-left-in");
       });
-      all_i.forEach((e) => {
+      leftLate.forEach((e) => {
         e.classList.remove("transition-left-in-img");
       });
 
-      h.classList.add("transition-top-out");
-      all_p.forEach((e) => {
+      up.classList.add("transition-top-out");
+      leftEarly.forEach((e) => {
         e.classList.add("transition-left-out");
       });
-      all_i.forEach((e) => {
+      leftLate.forEach((e) => {
         e.classList.add("transition-left-out-img");
       });
+
       
       setTimeout(() => {
-        h.classList.remove("transition-top-out");
-        all_p.forEach((e) => {
+        up.classList.remove("transition-top-out");
+        leftEarly.forEach((e) => {
           e.classList.remove("transition-left-out");
         });
-        all_i.forEach((e) => {
+        leftLate.forEach((e) => {
           e.classList.remove("transition-left-out-img");
         });
         section.style.display = "none";

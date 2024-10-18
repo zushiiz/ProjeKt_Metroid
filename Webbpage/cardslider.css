@@ -1,6 +1,6 @@
 :root{
 	--slider-width:50em;
-	--cards-width:20em;
+	--cards-width:17em;
   --card-color:gray;
 }
 
@@ -51,7 +51,7 @@
 
 #cards-section{
   display: none;
-  height: 100vh;
+  height: 80vh;
 }
 
 @keyframes adjust-z-index {

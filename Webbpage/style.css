@@ -16,6 +16,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 body{
@@ -59,6 +60,8 @@ h1{
 
 img{
   width: 100%;
+  max-width: 60em;
+  max-height: 20em;
 }
 
 #tmln-section{
@@ -106,12 +109,93 @@ img{
   margin: 1em 0;
 }
 
+/*footer*/
+footer div{
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+}
+
+footer{
+  background-color:var(--secondary);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;  
+  align-items: center;
+}
+
+footer p{
+  font-size: 0.8em;
+  text-align: center;
+}
+.footer-links{
+  margin:1em 0 3em 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 98vw;
+}
+.footer-links a{
+  padding: 0.5em 1em;
+  border-right: 1px solid var(--primary);
+
+
+  color: var(--primary);
+}
+#no-border{
+  border: none;
+}
+
+.icon{
+  width: 3rem;
+  height: 100%;
+  fill: var(--primary-text);
+  cursor: pointer;
+  fill: var(--primary);
+}
+
+.icon:hover{
+  scale: 1.1;
+  transition: 0.3s ease-out;
+}
+
+.socials-main{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 30rem;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*startsection*/
+.start-section{
+  display: none;
+  min-width: 100%;
+  min-height: 40vh;
+  color: white;
+  background-image: url("800x800.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+}
+
+
+/*desktop*/
 @media only screen and (min-width: 600px) {
 
   aside{
     display: none;
   }
 
+  .start-section{
+    display: flex;
+  }
 }
 
 @media only screen and (min-width: 769px) {
