@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  text-align: center;
 }
 
 body{
@@ -33,6 +34,7 @@ aside{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  z-index: 100;
 }
 
 #prkt-section{
@@ -41,7 +43,11 @@ aside{
 }
 
 h1{
-  text-align: center;
+  background-color: rgb(0, 0, 0, 0.5); /*variable?*/
+  padding: 0.3rem 5rem;
+}
+
+h2{
   margin: 0;
   margin-bottom: 1em;
 }
@@ -58,10 +64,15 @@ h1{
   border-radius: 15px;
 }
 
+picture{
+  z-index: 1;
+}
+
 img{
   width: 100%;
   max-width: 60em;
   max-height: 20em;
+  z-index: 1;
 }
 
 #tmln-section{
@@ -92,6 +103,7 @@ img{
 
 .scale-up{
   transform: scale(3);
+  background-color: var(--primary);
 }
 
 .button-section{
@@ -110,65 +122,7 @@ img{
 }
 
 /*footer*/
-footer div{
-  display: flex;
-  justify-content: center;
-  color: var(--primary);
-}
 
-footer{
-  background-color:var(--secondary);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: auto;  
-  align-items: center;
-}
-
-footer p{
-  font-size: 0.8em;
-  text-align: center;
-  color: var(--primary);
-}
-.footer-links{
-  margin:1em 0 3em 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 98vw;
-}
-.footer-links a{
-  padding: 0.5em 1em;
-  border-right: 1px solid var(--primary);
-  color: var(--primary);
-}
-
-#no-border{
-  border: none;
-}
-
-.icon{
-  width: 3rem;
-  height: 100%;
-  fill: var(--primary-text);
-  cursor: pointer;
-  fill: var(--primary);
-}
-
-.icon:hover{
-  scale: 1.1;
-  transition: 0.3s ease-out;
-}
-
-.socials-main{
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  max-width: 30rem;
-  margin: 1em 0;
-  padding: 0;
-}
 
 /*startsection*/
 .start-section{
@@ -183,6 +137,10 @@ footer p{
   justify-content: center;
   align-items: center;
   font-size: 5em;
+}
+
+nav{
+  display: none;
 }
 
 
@@ -201,6 +159,25 @@ footer p{
     display: none;
   }
   
+  nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 3rem;
+  }
+
+  nav > div{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+
+  nav > div > button{
+    width: 100%;
+  }
+
 }
 
 @media only screen and (min-width: 769px) {

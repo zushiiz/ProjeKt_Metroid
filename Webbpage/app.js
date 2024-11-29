@@ -9,11 +9,12 @@ function toggleSection(sectionId, buttonId){
     } else {
       button.classList.remove("scale-up");
     }
+
   });
 
   allSections.forEach((section) => {
 
-    const up = section.querySelector("h1");
+    const up = section.querySelector("h2");
     const leftEarly = section.querySelectorAll("p");
     const leftLate = section.querySelectorAll(".left-late");
 
@@ -120,3 +121,10 @@ slider.addEventListener("mousemove", (e) => {
   const walk = x - startX;
   slider.scrollLeft = scrollLeft - walk;
 });
+
+
+//scroll
+function scrollSection(a) {
+  const element = document.getElementById(a);
+  element.scrollIntoView({ behavior: "smooth", block: "start" });
+}
