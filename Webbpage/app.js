@@ -64,14 +64,14 @@ function toggleSection(sectionId, buttonId){
   });
 }
 
-const mediaQuery = window.matchMedia("(min-width:600px)");
+const mediaQuery = window.matchMedia("(min-width:769px)");
 
 function desktopSection(e) {
   const allSections = document.querySelectorAll(".button-section");
   const firstSection = document.getElementById("prkt-section");
   allSections.forEach((section) => {
     if (e.matches) {
-      section.style.display = "flex";
+      section.style.display = "none";
     } else {
       section.style.display = "none";
       firstSection.style.display = "flex";
